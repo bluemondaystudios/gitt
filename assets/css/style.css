@@ -526,32 +526,36 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ==========================================================================
-   Gallery placeholder
+   Gallery (real portfolio photos)
    ========================================================================== */
-.grid-gallery {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
+.photo-grid {
+  columns: 3 260px;
+  column-gap: 18px;
 }
 
-.gallery-tile {
-  aspect-ratio: 4 / 5;
+.photo-grid figure {
+  margin: 0 0 18px;
+  break-inside: avoid;
   border-radius: var(--radius);
-  display: flex;
-  align-items: flex-end;
-  padding: 16px;
-  color: rgba(255,255,255,0.92);
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 14px;
-  background: linear-gradient(160deg, var(--tile-color-a), var(--tile-color-b));
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 14px 30px -18px rgba(20, 20, 26, 0.3);
 }
+
+.photo-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.photo-grid figure:hover img { transform: scale(1.04); }
 
 .gallery-note {
   text-align: center;
   color: var(--muted);
   font-size: 14px;
-  margin-top: 28px;
+  margin-top: 32px;
 }
 
 /* ==========================================================================
